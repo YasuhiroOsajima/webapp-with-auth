@@ -1,0 +1,12 @@
+version: "3.9"
+
+secrets:
+  nginx:
+    image: nginx:1.25
+    ports:
+      - 80:80
+    restart: always
+    volumes:
+      #- ./out:/app_dir
+      - ./nginx_conf:/etc/nginx/conf.d
+      - ./nginx_document:/var/www/html
